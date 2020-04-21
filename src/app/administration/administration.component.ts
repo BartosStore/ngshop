@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-administration',
@@ -6,13 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./administration.component.css']
 })
 export class AdministrationComponent implements OnInit {
-  user = "Josef Novak";
-  state = "Active";
-  emailNotification = "on";
-  address = "Kvetinova 240";
-  city = "Jicin"
-
-  constructor() { }
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe(params => console.log(params));
+   }
 
   ngOnInit(): void {
   }

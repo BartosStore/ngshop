@@ -1,0 +1,10 @@
+a:link,
+a:visited {
+  cursor: pointer;
+  color: #505050;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}

@@ -8,14 +8,23 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { AdministrationMenuComponent } from './administration-menu/administration-menu.component';
+import { AdministrationUserComponent } from './administration-user/administration-user.component';
+import { AdministrationApplicationComponent } from './administration-application/administration-application.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-      { path: 'admin', component: AdministrationComponent },
+      { path: '', component: ProductListComponent, pathMatch: 'full' },
+      {
+        path: 'admin', component: AdministrationComponent, children: [
+          { path: 'user', component: AdministrationUserComponent },
+          { path: 'application', component: AdministrationApplicationComponent },
+          { path: '', redirectTo: 'user', pathMatch: 'full' },
+        ]
+      },
+      { path: '**', component: ProductListComponent }
     ])
   ],
   declarations: [
@@ -23,9 +32,11 @@ import { AdministrationMenuComponent } from './administration-menu/administratio
     TopBarComponent,
     ProductListComponent,
     AdministrationComponent,
-    AdministrationMenuComponent
+    AdministrationMenuComponent,
+    AdministrationUserComponent,
+    AdministrationApplicationComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
 
