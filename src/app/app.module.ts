@@ -10,6 +10,7 @@ import { AdministrationComponent } from './administration/administration.compone
 import { AdministrationMenuComponent } from './administration-menu/administration-menu.component';
 import { AdministrationUserComponent } from './administration-user/administration-user.component';
 import { AdministrationApplicationComponent } from './administration-application/administration-application.component';
+import { AdministrationAboutComponent } from './administration-about/administration-about.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { AdministrationApplicationComponent } from './administration-application
         path: 'admin', component: AdministrationComponent, children: [
           { path: 'user', component: AdministrationUserComponent },
           { path: 'application', component: AdministrationApplicationComponent },
+          { path: 'about', component: AdministrationAboutComponent },
           { path: '', redirectTo: 'user', pathMatch: 'full' },
         ]
       },
@@ -34,7 +36,8 @@ import { AdministrationApplicationComponent } from './administration-application
     AdministrationComponent,
     AdministrationMenuComponent,
     AdministrationUserComponent,
-    AdministrationApplicationComponent
+    AdministrationApplicationComponent,
+    AdministrationAboutComponent
   ],
   bootstrap: [AppComponent]
 })
