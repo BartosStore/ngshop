@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { AdministrationMenuComponent } from './administration-menu/administration-menu.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { AdministrationComponent } from './administration/administration.compone
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    AdministrationComponent
+    AdministrationComponent,
+    AdministrationMenuComponent
   ],
   bootstrap: [ AppComponent ]
 })

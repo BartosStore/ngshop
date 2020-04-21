@@ -1,3 +1,16 @@
+app-administration-menu {
+  float: left;
+  margin-right: 20px;
+  padding-right: 20px;
+  border-right: 1px solid;
+  border-color: grey;
+}
+
+.administration-content {
+  float: right;
+  margin-top: 20px;
+}
+
 label {
   display: inline-block;
 }
