@@ -11,6 +11,7 @@ import { AdministrationMenuComponent } from './administration-menu/administratio
 import { AdministrationUserComponent } from './administration-user/administration-user.component';
 import { AdministrationApplicationComponent } from './administration-application/administration-application.component';
 import { AdministrationAboutComponent } from './administration-about/administration-about.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,8 @@ import { AdministrationAboutComponent } from './administration-about/administrat
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent, pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'shop', component: ProductListComponent },
       {
         path: 'admin', component: AdministrationComponent, children: [
           { path: 'user', component: AdministrationUserComponent },
@@ -37,7 +40,8 @@ import { AdministrationAboutComponent } from './administration-about/administrat
     AdministrationMenuComponent,
     AdministrationUserComponent,
     AdministrationApplicationComponent,
-    AdministrationAboutComponent
+    AdministrationAboutComponent,
+    DashboardComponent
   ],
   bootstrap: [AppComponent]
 })

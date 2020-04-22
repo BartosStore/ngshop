@@ -14,7 +14,9 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "allowJs": true,
+    "maxNodeModuleJsDepth": 100
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
