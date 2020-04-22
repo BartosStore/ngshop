@@ -13,6 +13,7 @@ import { AdministrationApplicationComponent } from './administration-application
 import { AdministrationAboutComponent } from './administration-about/administration-about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
           { path: '', redirectTo: 'user', pathMatch: 'full' },
         ]
       },
+      { path: 'products/:productId', component: ProductDetailComponent },
       { path: '**', component: ProductListComponent }
     ])
   ],
@@ -43,7 +45,8 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
     AdministrationApplicationComponent,
     AdministrationAboutComponent,
     DashboardComponent,
-    ProductAlertsComponent
+    ProductAlertsComponent,
+    ProductDetailComponent
   ],
   bootstrap: [AppComponent]
 })
