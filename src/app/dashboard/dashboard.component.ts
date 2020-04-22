@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let chart = new CanvasJS.Chart("chartContainer", {
+    let batchChart = new CanvasJS.Chart("chartContainer", {
       // animationEnabled: true, ERROR
       // exportEnabled: true, ERROR
       title: {
@@ -34,7 +34,29 @@ export class DashboardComponent implements OnInit {
       }]
     });
 
-    chart.render();
+    let soldProductsChart = new CanvasJS.Chart("soldChartContainer", {
+      title: {
+        text: "Sold products [pcs]"
+      },
+      axisX: {
+        labelAngle: 0
+      },
+      data: [{
+        type: "column",
+        dataPoints: [
+          { y: 50, label: "Monday" },
+          { y: 55, label: "Tuesday" },
+          { y: 71, label: "Wednesday" },
+          { y: 65, label: "Thursday" },
+          { y: 68, label: "Friday" },
+          { y: 195, label: "Saturday" },
+          { y: 168, label: "Sunday" },
+        ]
+      }]
+    });
+
+    batchChart.render();
+    soldProductsChart.render();
   }
 }
 
