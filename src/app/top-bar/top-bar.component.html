@@ -1,14 +1,17 @@
-<span>
-  <a [routerLink]="['/dashboard']">
-    <h1>Dashboard</h1>
+<!-- <nav class="navbar navbar-dark bg-dark"> -->
+<nav class="navbar">
+  <!-- <span class="navbar-brand mb-0 h1">ngshop</span> -->
+
+  <a class="nav-link" [routerLink]="['/dashboard']">
+    Dashboard
   </a>
-  <a [routerLink]="['/']">
-    <h1>Shop</h1>
+  <a class="navbar-brand" [routerLink]="['/']">
+    Shop
   </a>
-  <a [routerLink]="['/admin']">
-    <h1>Administration</h1>
+  <a class="nav-link" [routerLink]="['/admin']">
+    Administration
   </a>
-</span>
+</nav>
 
 <a class="button fancy-button"><i class="material-icons">shopping_cart</i>Checkout</a>
 
