@@ -12,6 +12,7 @@ import { AdministrationUserComponent } from './administration-user/administratio
 import { AdministrationApplicationComponent } from './administration-application/administration-application.component';
 import { AdministrationAboutComponent } from './administration-about/administration-about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 
 @NgModule({
   imports: [
@@ -41,7 +42,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AdministrationUserComponent,
     AdministrationApplicationComponent,
     AdministrationAboutComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductAlertsComponent
   ],
   bootstrap: [AppComponent]
 })
