@@ -14,6 +14,7 @@ import { AdministrationAboutComponent } from './administration-about/administrat
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   imports: [
@@ -32,6 +33,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
         ]
       },
       { path: 'products/:productId', component: ProductDetailComponent },
+      { path: 'cart', component: CartComponent },
       { path: '**', component: ProductListComponent }
     ])
   ],
@@ -46,7 +48,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     AdministrationAboutComponent,
     DashboardComponent,
     ProductAlertsComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    CartComponent
   ],
   bootstrap: [AppComponent]
 })

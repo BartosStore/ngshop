@@ -4,6 +4,20 @@ a:visited {
   color: aliceblue;
 }
 
+.cart a:link {
+  text-decoration: none;
+}
+
+.cart .fancy-button {
+  background-color: white;
+  color: #1976d2;
+}
+
+.button .fancy-button i.material-icons {
+  color: #1976d2;
+  padding-right: 4px;
+}
+
 
 /*
 Copyright Google LLC. All Rights Reserved.
