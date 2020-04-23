@@ -11,10 +11,10 @@ export class CartComponent implements OnInit {
 
   constructor(
     private cartService: CartService
-  ) {
-    this.products = cartService.getItems;
-  }
+  ) { }
 
   ngOnInit(): void {
+    console.log('items: ' + this.cartService.getItems());
+    this.products = this.cartService.getItems();
   }
 }
