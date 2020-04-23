@@ -1,4 +1,6 @@
 <div class="cart-component">
+  <button class="clear-button" (click)="clearItems()">Clear cart</button>
+
   <h2>Cart</h2>
 
   <div class="cart-item" *ngFor="let product of products">
