@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -15,10 +16,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CartComponent } from './cart/cart.component';
+import { ShippingComponent } from './shipping/shipping.component';
 
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent, pathMatch: 'full' },
@@ -49,7 +52,8 @@ import { CartComponent } from './cart/cart.component';
     DashboardComponent,
     ProductAlertsComponent,
     ProductDetailComponent,
-    CartComponent
+    CartComponent,
+    ShippingComponent
   ],
   bootstrap: [AppComponent]
 })
