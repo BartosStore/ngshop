@@ -17,9 +17,13 @@ import { ProductAlertsComponent } from './product-alerts/product-alerts.componen
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   imports: [
+    MatSliderModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -38,7 +42,8 @@ import { ShippingComponent } from './shipping/shipping.component';
       { path: 'products/:productId', component: ProductDetailComponent },
       { path: 'cart', component: CartComponent },
       { path: '**', component: ProductListComponent }
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
