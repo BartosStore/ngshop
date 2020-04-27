@@ -18,6 +18,8 @@ export class AdministrationUserComponent implements OnInit {
   ageTickInterval = 100;
   ageValue = 28;
 
+  isNotificationsEnabled = false;
+
   constructor() { }
 
   ngOnInit(): void {

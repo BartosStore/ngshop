@@ -19,15 +19,18 @@ import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
-import { FormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { EmailNotificationsPipe } from './email-notifications.pipe';
 
 @NgModule({
   imports: [
+    FormsModule,
     MatSliderModule,
     MatCardModule,
-    FormsModule,
+    MatCheckboxModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -62,7 +65,8 @@ import { FormsModule } from '@angular/forms';
     ProductAlertsComponent,
     ProductDetailComponent,
     CartComponent,
-    ShippingComponent
+    ShippingComponent,
+    EmailNotificationsPipe
   ],
   bootstrap: [AppComponent]
 })

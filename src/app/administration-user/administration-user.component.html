@@ -23,7 +23,8 @@
     </div>
 
     <div>
-      <label>Email notifications:</label> {{emailNotification}}
+      <mat-checkbox [(ngModel)]="isNotificationsEnabled">Send me email notifications</mat-checkbox>
+      <br> {{isNotificationsEnabled | emailNotifications }}
     </div>
   </mat-card>
 
