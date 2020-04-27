@@ -21,6 +21,9 @@ export class AdministrationUserComponent implements OnInit {
   ageTickInterval = 100;
   ageValue = 28;
 
+  dateOfBirthValue = '01/01/2000';
+  dateOfBirthFormControl = new FormControl(new Date());
+
   formControl = new FormControl();
   professions: string[] = ['programmer', 'administrator', 'manager'];
   filteredProfessions: Observable<string[]>;

@@ -19,8 +19,17 @@
     </div>
 
     <div>
+      <label>Date of birth:</label>
+      <mat-form-field class="field">
+        <input matInput [matDatepicker]="birthDatePicker" [formControl]="dateOfBirthFormControl">
+        <mat-datepicker-toggle matSuffix [for]="birthDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #birthDatePicker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <div>
       <label>Profession:</label>
-      <mat-form-field class="profession-field">
+      <mat-form-field class="field">
         <input type="text" matInput placeholder="Pick profession" [matAutocomplete]="professionAutoComplete" [formControl]="formControl">
       </mat-form-field>
       <mat-autocomplete #professionAutoComplete="matAutocomplete">

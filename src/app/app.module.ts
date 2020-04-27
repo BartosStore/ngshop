@@ -24,17 +24,22 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { EmailNotificationsPipe } from './email-notifications.pipe';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from "@angular/material/core";
 
 @NgModule({
   imports: [
+    MatNativeDateModule,
     FormsModule,
     MatSliderModule,
     MatCardModule,
     MatCheckboxModule,
     MatInputModule,
     MatAutocompleteModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
