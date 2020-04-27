@@ -24,6 +24,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { EmailNotificationsPipe } from './email-notifications.pipe';
+import {MatInputModule} from '@angular/material/input';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   imports: [
@@ -31,6 +33,8 @@ import { EmailNotificationsPipe } from './email-notifications.pipe';
     MatSliderModule,
     MatCardModule,
     MatCheckboxModule,
+    MatInputModule,
+    MatAutocompleteModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
