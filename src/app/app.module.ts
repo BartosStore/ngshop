@@ -18,6 +18,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CounterComponent } from "./counter/counter.component";
 
 import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
@@ -28,6 +29,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from "@angular/material/core";
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from "./ngrx/app.reducer";
 
 @NgModule({
   imports: [
@@ -59,7 +62,8 @@ import { MatNativeDateModule } from "@angular/material/core";
       { path: 'cart', component: CartComponent },
       { path: '**', component: ProductListComponent }
     ]),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    StoreModule.forRoot({ count: counterReducer })
   ],
   declarations: [
     AppComponent,
@@ -75,7 +79,8 @@ import { MatNativeDateModule } from "@angular/material/core";
     ProductDetailComponent,
     CartComponent,
     ShippingComponent,
-    EmailNotificationsPipe
+    EmailNotificationsPipe,
+    CounterComponent
   ],
   bootstrap: [AppComponent]
 })
