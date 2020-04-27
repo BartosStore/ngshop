@@ -6,7 +6,7 @@ mat-slider {
   width: 200px;
 }
 
-.slider-card {
-  width: 300px;
+mat-card {
+  width: 350px;
   margin-bottom: 20px;
 }
