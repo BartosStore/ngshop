@@ -20,10 +20,14 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSliderModule } from '@angular/material/slider';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     MatSliderModule,
+    MatCardModule,
+    FormsModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,

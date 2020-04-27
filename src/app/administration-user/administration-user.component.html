@@ -1,32 +1,35 @@
 <div class="administration-content">
   <h2>Settings</h2>
 
-  <h3>User</h3>
+  <mat-card class="slider-card">
+    <h3>User</h3>
 
-  <div>
-    <label>Name:</label> {{user}}
-  </div>
+    <div>
+      <label>Name:</label> {{user}}
+    </div>
+    <div>
+      <label>Age:</label> {{ageValue}}
+      <mat-slider thumbLabel [tickInterval]="ageTickInterval" [min]="ageMin" [max]="ageMax" [step]="ageStep" [value]="ageValue" [(ngModel)]="ageValue">
+      </mat-slider>
+    </div>
+    <div>
+      <label>State:</label> {{state}}
+    </div>
 
-  <div>
-    <label>Age:</label>
-    <mat-slider min="7" max="100" step="1" value="1"></mat-slider>
-  </div>
+    <div>
+      <label>Email notifications:</label> {{emailNotification}}
+    </div>
+  </mat-card>
 
-  <div>
-    <label>State:</label> {{state}}
-  </div>
+  <mat-card class="slider-card">
+    <h3>Address</h3>
 
-  <div>
-    <label>Email notifications:</label> {{emailNotification}}
-  </div>
+    <div>
+      <label>Address:</label> {{address}}
+    </div>
 
-  <h3>Address</h3>
-
-  <div>
-    <label>Address:</label> {{address}}
-  </div>
-
-  <div>
-    <label>City:</label> {{city}}
-  </div>
+    <div>
+      <label>City:</label> {{city}}
+    </div>
+  </mat-card>
 </div>

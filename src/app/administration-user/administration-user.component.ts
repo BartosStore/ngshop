@@ -11,7 +11,13 @@ export class AdministrationUserComponent implements OnInit {
   emailNotification = "on";
   address = "Kvetinova 240";
   city = "Jicin";
-  
+
+  ageMin = 7;
+  ageMax = 100;
+  ageStep = 1;
+  ageTickInterval = 100;
+  ageValue = 28;
+
   constructor() { }
 
   ngOnInit(): void {
