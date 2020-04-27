@@ -10,3 +10,7 @@ mat-card {
   width: 350px;
   margin-bottom: 20px;
 }
+
+.profession-field {
+  margin-left: 10px;
+}

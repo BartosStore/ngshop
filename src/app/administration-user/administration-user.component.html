@@ -20,11 +20,11 @@
 
     <div>
       <label>Profession:</label>
-      <mat-form-field>
-        <input type="text" matInput [matAutocomplete]="professionAutoComplete">
+      <mat-form-field class="profession-field">
+        <input type="text" matInput placeholder="Pick profession" [matAutocomplete]="professionAutoComplete" [formControl]="formControl">
       </mat-form-field>
       <mat-autocomplete #professionAutoComplete="matAutocomplete">
-        <mat-option *ngFor="let profession of professions" [value]="profession">{{profession}}</mat-option>
+        <mat-option *ngFor="let profession of filteredProfessions | async" [value]="profession">{{profession}}</mat-option>
       </mat-autocomplete>
     </div>
 
