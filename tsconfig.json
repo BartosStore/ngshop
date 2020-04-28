@@ -16,7 +16,9 @@
       "dom"
     ],
     "allowJs": true,
-    "maxNodeModuleJsDepth": 100
+    "maxNodeModuleJsDepth": 100,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
