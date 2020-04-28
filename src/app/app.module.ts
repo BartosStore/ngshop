@@ -19,6 +19,7 @@ import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CounterComponent } from "./counter/counter.component";
+import { PumpComponent } from './pump/pump.component';
 
 import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
@@ -31,7 +32,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from "@angular/material/core";
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from "./ngrx/app.reducer";
-import { PumpComponent } from './pump/pump.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ import { PumpComponent } from './pump/pump.component';
     MatAutocompleteModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatTableModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
