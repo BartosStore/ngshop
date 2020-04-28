@@ -20,19 +20,20 @@ import { ShippingComponent } from './shipping/shipping.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CounterComponent } from "./counter/counter.component";
 import { PumpComponent } from './pump/pump.component';
+import { EmailNotificationsPipe } from './email-notifications.pipe';
 
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from "./ngrx/app.reducer";
 import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { EmailNotificationsPipe } from './email-notifications.pipe';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from "@angular/material/core";
-import { StoreModule } from '@ngrx/store';
-import { counterReducer } from "./ngrx/app.reducer";
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   imports: [
@@ -46,6 +47,7 @@ import {MatTableModule} from '@angular/material/table';
     MatDatepickerModule,
     MatNativeDateModule,
     MatTableModule,
+    MatSortModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
