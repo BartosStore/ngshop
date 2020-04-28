@@ -31,6 +31,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from "@angular/material/core";
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from "./ngrx/app.reducer";
+import { PumpComponent } from './pump/pump.component';
 
 @NgModule({
   imports: [
@@ -60,6 +61,7 @@ import { counterReducer } from "./ngrx/app.reducer";
       },
       { path: 'products/:productId', component: ProductDetailComponent },
       { path: 'cart', component: CartComponent },
+      { path: 'pump', component: PumpComponent },
       { path: '**', component: ProductListComponent }
     ]),
     BrowserAnimationsModule,
@@ -80,7 +82,8 @@ import { counterReducer } from "./ngrx/app.reducer";
     CartComponent,
     ShippingComponent,
     EmailNotificationsPipe,
-    CounterComponent
+    CounterComponent,
+    PumpComponent
   ],
   bootstrap: [AppComponent]
 })
