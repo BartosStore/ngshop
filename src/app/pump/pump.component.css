@@ -10,3 +10,16 @@ table {
 .mat-column-select {
   overflow: initial;
 }
+
+.pump-text {
+  float: left;
+  clear: both;
+}
+
+.pump-actions {
+  float: right;
+}
+
+.divider {
+  clear: both;
+}

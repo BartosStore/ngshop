@@ -44,6 +44,15 @@ export class PumpComponent implements OnInit {
     this.sortedDataSource.paginator = this.paginator;
   }
 
+  printSelected() {
+    console.log('Selected items: ' + this.selection.selected.length);
+    this.sortedDataSource.filteredData.forEach(row => {
+      if (this.selection.isSelected(row)) {
+        console.log(row.name + ' from ' + row.city)
+      }
+    });
+  }
+
   isAllSelected() {
     const selectedCount = this.selection.selected.length;
     const allRows = this.sortedDataSource.data.length;

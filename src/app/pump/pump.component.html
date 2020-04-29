@@ -1,7 +1,14 @@
 <div class="pump">
   <h2>Pump</h2>
-  <p>Data processing</p>
-  <p>Available actions: display, sort, filter, selection</p>
+  <div class="pump-text">
+    <p>Data processing</p>
+    <p>Available actions: display, sort, filter, selection</p>
+  </div>
+  <div class="pump-actions">
+    <button mat-raised-button (click)="printSelected()">Print</button>
+  </div>
+
+  <div class="divider"></div>
 
   <mat-form-field>
     <mat-label>Filter</mat-label>
