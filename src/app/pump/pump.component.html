@@ -2,6 +2,11 @@
   <h2>Pump</h2>
   <p>Data processing</p>
 
+  <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="filter($event)" placeholder="Josef" />
+  </mat-form-field>
+
   <table mat-table [dataSource]="sortedDataSource" matSort (matSortChange)="sortByColumn($event)">
     <ng-container matColumnDef="index">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>#</th>

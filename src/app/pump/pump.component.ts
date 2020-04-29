@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { PageEvent, MatPaginator } from '@angular/material/paginator';
 import { Sort } from '@angular/material/sort';
 import JsonData from './voters_data.json';
-import { PageEvent, MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
 
 export interface Voter {
   name: string,
@@ -33,6 +33,11 @@ export class PumpComponent implements OnInit {
 
   ngOnInit(): void {
     this.sortedDataSource.paginator = this.paginator;
+  }
+
+  filter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.sortedDataSource.filter = filterValue.trim().toLowerCase();
   }
 
   sortByColumn(sort: Sort) {
