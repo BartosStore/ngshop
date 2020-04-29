@@ -11,6 +11,10 @@ table {
   overflow: initial;
 }
 
+.pump-panel {
+  margin-bottom: 20px;
+}
+
 .pump-text {
   float: left;
   clear: both;
