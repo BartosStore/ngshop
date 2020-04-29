@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import JsonData from './voters_data.json';
+import { PageEvent, MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 
 export interface Voter {
   name: string,
@@ -15,23 +17,32 @@ export interface Voter {
 })
 export class PumpComponent implements OnInit {
   dataColumns: string[] = ['index', 'name', 'age', 'city'];
-  sortedDataSource: Voter[];
+  sortedDataSource: MatTableDataSource<Voter>;
+
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  pageSizeOptions: number[] = [5, 10, 25, 100];
+  length;
+  pageSize;
+  pageEvent: PageEvent;
 
   constructor() {
-    this.sortedDataSource = JsonData.slice();
+    this.length = JsonData.length;
+    this.pageSize = this.pageSizeOptions[1];
+    this.sortedDataSource = new MatTableDataSource<Voter>(JsonData.slice());
   }
 
   ngOnInit(): void {
+    this.sortedDataSource.paginator = this.paginator;
   }
 
   sortByColumn(sort: Sort) {
     const data = JsonData.slice();
     if (!sort.active || sort.direction === '') {
-      this.sortedDataSource = data;
+      this.sortedDataSource = new MatTableDataSource<Voter>(data);
       return;
     }
 
-    this.sortedDataSource = data.sort((a, b) => {
+    const sortedData = data.sort((a, b) => {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
         case 'name':
@@ -44,6 +55,8 @@ export class PumpComponent implements OnInit {
           return 0;
       }
     });
+
+    this.sortedDataSource = new MatTableDataSource<Voter>(sortedData);
   }
 
   compare(a: number | string, b: number | string, isAsc: boolean) {
