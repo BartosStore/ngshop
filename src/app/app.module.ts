@@ -35,7 +35,9 @@ import { MatNativeDateModule } from "@angular/material/core";
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+
 
 @NgModule({
   imports: [
@@ -52,6 +54,7 @@ import {MatButtonModule} from '@angular/material/button';
     MatSortModule,
     MatPaginatorModule,
     MatButtonModule,
+    MatExpansionModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,

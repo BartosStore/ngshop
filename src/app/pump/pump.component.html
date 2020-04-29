@@ -1,19 +1,24 @@
 <div class="pump">
   <h2>Pump</h2>
-  <div class="pump-text">
-    <p>Data processing</p>
-    <p>Available actions: display, sort, filter, selection</p>
-  </div>
-  <div class="pump-actions">
-    <button mat-raised-button (click)="printSelected()">Print</button>
-  </div>
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Actions
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div class="pump-text">
+      <p>Available actions: display, sort, filter, selection, printing</p>
+    </div>
+    <div class="pump-actions">
+      <button mat-raised-button (click)="printSelected()">Print</button>
+    </div>
+    <div class="divider"></div>
 
-  <div class="divider"></div>
-
-  <mat-form-field>
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="filter($event)" placeholder="Josef" />
-  </mat-form-field>
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="filter($event)" placeholder="Josef" />
+    </mat-form-field>
+  </mat-expansion-panel>
 
   <table mat-table [dataSource]="sortedDataSource" matSort (matSortChange)="sortByColumn($event)">
     <ng-container matColumnDef="index">
