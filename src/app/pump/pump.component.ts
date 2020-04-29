@@ -53,7 +53,7 @@ export class PumpComponent implements OnInit {
   toggleAll() {
     this.isAllSelected() ?
       this.selection.clear() :
-      this.sortedDataSource.data.forEach(row => this.selection.select(row));
+      this.sortedDataSource.filteredData.forEach(row => this.selection.select(row));
   }
 
   toggle(row) {
