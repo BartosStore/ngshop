@@ -4,6 +4,8 @@ import { PageEvent, MatPaginator } from '@angular/material/paginator';
 import { Sort } from '@angular/material/sort';
 import JsonData from './voters_data.json';
 
+import { SelectionModel } from '@angular/cdk/collections';
+
 export interface Voter {
   name: string,
   age: number,
@@ -16,14 +18,21 @@ export interface Voter {
   styleUrls: ['./pump.component.css']
 })
 export class PumpComponent implements OnInit {
-  dataColumns: string[] = ['index', 'name', 'age', 'city'];
+  // table data
+  dataColumns: string[] = ['index', 'name', 'age', 'city', 'selection'];
   sortedDataSource: MatTableDataSource<Voter>;
 
+  // pagination
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   pageSizeOptions: number[] = [5, 10, 25, 100];
   length;
   pageSize;
   pageEvent: PageEvent;
+
+  // selection
+  initialSelection = [];
+  allowMultiSelect = true;
+  selection = new SelectionModel<Voter>(this.allowMultiSelect, this.initialSelection);
 
   constructor() {
     this.length = JsonData.length;
@@ -33,6 +42,24 @@ export class PumpComponent implements OnInit {
 
   ngOnInit(): void {
     this.sortedDataSource.paginator = this.paginator;
+  }
+
+  isAllSelected() {
+    const selectedCount = this.selection.selected.length;
+    const allRows = this.sortedDataSource.data.length;
+    return selectedCount === allRows;
+  }
+
+  toggleAll() {
+    this.isAllSelected() ?
+      this.selection.clear() :
+      this.sortedDataSource.data.forEach(row => this.selection.select(row));
+  }
+
+  toggle(row) {
+    this.selection.isSelected(row) ?
+      this.selection.deselect(row) :
+      this.selection.select(row);
   }
 
   filter(event: Event) {

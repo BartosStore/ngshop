@@ -1,7 +1,7 @@
 <div class="pump">
   <h2>Pump</h2>
   <p>Data processing</p>
-  <p>Available actions: display, sort, filter</p>
+  <p>Available actions: display, sort, filter, selection</p>
 
   <mat-form-field>
     <mat-label>Filter</mat-label>
@@ -27,6 +27,17 @@
     <ng-container matColumnDef="city">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Město</th>
       <td mat-cell *matCellDef="let element">{{element.city}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="selection">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox (change)="$event ? toggleAll() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
+        </mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox (change)="$event ? toggle(row) : null" (click)="$event.stopPropagation()" [checked]="selection.isSelected(row)">
+        </mat-checkbox>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="dataColumns"></tr>
