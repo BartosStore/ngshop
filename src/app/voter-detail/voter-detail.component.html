@@ -1,11 +1,24 @@
-<div class="voter-detail">
-  <h2>{{name}}</h2>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>{{name}}</h2>
+    </mat-card-title>
+    <mat-card-subtitle>
+      Voter detail
+    </mat-card-subtitle>
+  </mat-card-header>
 
-  <div>
-    <label>Age:</label> {{age}}
-  </div>
+  <mat-card-content>
+    <div>
+      <label>Age:</label> {{age}}
+    </div>
+    <div>
+      <label>City:</label> {{city}}
+    </div>
+  </mat-card-content>
 
-  <div>
-    <label>City:</label> {{city}}
-  </div>
-</div>
+  <mat-card-actions>
+    <button mat-button>SAVE</button>
+    <button mat-button>CANCEL</button>
+  </mat-card-actions>
+</mat-card>
