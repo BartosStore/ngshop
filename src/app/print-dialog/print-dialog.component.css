@@ -1,3 +1,7 @@
-/* .print-dialog {
-  width: 300px;
-} */
+table {
+  width: 100%;
+}
+
+.print-dialog {
+  width: 450px;
+}

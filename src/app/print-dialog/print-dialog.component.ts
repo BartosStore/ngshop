@@ -13,7 +13,6 @@ export class PrintDialogComponent implements OnInit {
   votersDataSource: MatTableDataSource<Voter>;
 
   constructor(@Inject(MAT_DIALOG_DATA) public voters: Voter[]) {
-    console.log(voters);
     this.votersDataSource = new MatTableDataSource<Voter>(voters.slice());
   }
 

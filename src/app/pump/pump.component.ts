@@ -47,16 +47,14 @@ export class PumpComponent implements OnInit {
   }
 
   printSelected() {
-    console.log('Selected items: ' + this.selection.selected.length);
     this.sortedDataSource.filteredData.forEach(row => {
       if (this.selection.isSelected(row)) {
         console.log(row.name + ' from ' + row.city)
       }
     });
 
-    const dialogVoter: Voter[] = [{ name: 'Anna', age: 28, city: 'HK' },{ name: 'Sofie', age: 29, city: 'HK' }];
     this.dialog.open(PrintDialogComponent, {
-      data: dialogVoter
+      data: this.sortedDataSource.filteredData
     });
   }
 
