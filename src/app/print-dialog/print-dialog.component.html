@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>
+    Print selected rows
+  </mat-card-title>
+
+  <mat-card-content>
+    <p>Name: {{data.name}}</p>
+    <p>Age: {{data.age}}</p>
+    <p>City: {{data.city}}</p>
+    <!-- <div *ngFor="let voter of voters">
+      <p>{{voter.name}}</p>
+    </div> -->
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button>Print</button>
+    <button mat-button [mat-dialog-close]="true">Storno</button>
+  </mat-card-actions>
+</mat-card>

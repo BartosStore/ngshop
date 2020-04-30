@@ -5,6 +5,8 @@ import { Sort } from '@angular/material/sort';
 import JsonData from './voters_data.json';
 
 import { SelectionModel } from '@angular/cdk/collections';
+import { MatDialog } from '@angular/material/dialog';
+import { PrintDialogComponent } from '../print-dialog/print-dialog.component';
 
 export interface Voter {
   name: string,
@@ -34,7 +36,7 @@ export class PumpComponent implements OnInit {
   allowMultiSelect = true;
   selection = new SelectionModel<Voter>(this.allowMultiSelect, this.initialSelection);
 
-  constructor() {
+  constructor(public dialog: MatDialog) {
     this.length = JsonData.length;
     this.pageSize = this.pageSizeOptions[1];
     this.sortedDataSource = new MatTableDataSource<Voter>(JsonData.slice());
@@ -50,6 +52,11 @@ export class PumpComponent implements OnInit {
       if (this.selection.isSelected(row)) {
         console.log(row.name + ' from ' + row.city)
       }
+    });
+
+    const dialogVoter: Voter = { name: 'Anna', age: 28, city: 'HK' };
+    this.dialog.open(PrintDialogComponent, {
+      data: dialogVoter
     });
   }
 

@@ -37,7 +37,8 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { PrintDialogComponent } from './print-dialog/print-dialog.component';
 
 @NgModule({
   imports: [
@@ -55,6 +56,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatPaginatorModule,
     MatButtonModule,
     MatExpansionModule,
+    MatDialogModule,
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -94,7 +96,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ShippingComponent,
     EmailNotificationsPipe,
     CounterComponent,
-    PumpComponent
+    PumpComponent,
+    PrintDialogComponent
   ],
   bootstrap: [AppComponent]
 })
