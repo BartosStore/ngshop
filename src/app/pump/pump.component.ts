@@ -54,7 +54,7 @@ export class PumpComponent implements OnInit {
       }
     });
 
-    const dialogVoter: Voter = { name: 'Anna', age: 28, city: 'HK' };
+    const dialogVoter: Voter[] = [{ name: 'Anna', age: 28, city: 'HK' },{ name: 'Sofie', age: 29, city: 'HK' }];
     this.dialog.open(PrintDialogComponent, {
       data: dialogVoter
     });

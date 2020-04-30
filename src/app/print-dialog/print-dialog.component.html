@@ -4,12 +4,11 @@
   </mat-card-title>
 
   <mat-card-content>
-    <p>Name: {{data.name}}</p>
-    <p>Age: {{data.age}}</p>
-    <p>City: {{data.city}}</p>
-    <!-- <div *ngFor="let voter of voters">
-      <p>{{voter.name}}</p>
-    </div> -->
+    <div *ngFor="let voter of voters">
+      <p>Name: {{voter.name}}</p>
+      <p>Age: {{voter.age}}</p>
+      <p>City: {{voter.city}}</p>
+    </div>
   </mat-card-content>
 
   <mat-card-actions>
