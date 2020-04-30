@@ -39,6 +39,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PrintDialogComponent } from './print-dialog/print-dialog.component';
+import { VoterDetailComponent } from './voter-detail/voter-detail.component';
 
 @NgModule({
   imports: [
@@ -75,6 +76,7 @@ import { PrintDialogComponent } from './print-dialog/print-dialog.component';
       { path: 'products/:productId', component: ProductDetailComponent },
       { path: 'cart', component: CartComponent },
       { path: 'pump', component: PumpComponent },
+      { path: 'pump/:voterId', component: VoterDetailComponent },
       { path: '**', component: ProductListComponent }
     ]),
     BrowserAnimationsModule,
@@ -97,7 +99,8 @@ import { PrintDialogComponent } from './print-dialog/print-dialog.component';
     EmailNotificationsPipe,
     CounterComponent,
     PumpComponent,
-    PrintDialogComponent
+    PrintDialogComponent,
+    VoterDetailComponent
   ],
   bootstrap: [AppComponent]
 })
