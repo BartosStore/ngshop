@@ -2,6 +2,11 @@
 
 Angular app with learning purpose
 
+## Features
+
+- ngrx state management
+  - asyn with ngrx-effects
+
 ## Run'n'roll
 
 ### Environment
