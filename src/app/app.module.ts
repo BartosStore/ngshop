@@ -23,7 +23,7 @@ import { PumpComponent } from './pump/pump.component';
 import { EmailNotificationsPipe } from './email-notifications.pipe';
 
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from "./ngrx/app.reducer";
+import { counterReducer } from "./store/reducer/counter.reducer";
 import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
@@ -40,6 +40,11 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PrintDialogComponent } from './print-dialog/print-dialog.component';
 import { VoterDetailComponent } from './voter-detail/voter-detail.component';
+import { PostsComponent } from './posts/posts.component';
+import { appReducers } from './store/reducer/app.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { PostEffects } from './store/effect/post.effect';
+import { PostService } from './service/post.service';
 
 @NgModule({
   imports: [
@@ -77,10 +82,12 @@ import { VoterDetailComponent } from './voter-detail/voter-detail.component';
       { path: 'cart', component: CartComponent },
       { path: 'pump', component: PumpComponent },
       { path: 'pump/:voterId', component: VoterDetailComponent },
+      { path: 'pump2', component: PostsComponent },
       { path: '**', component: ProductListComponent }
     ]),
     BrowserAnimationsModule,
-    StoreModule.forRoot({ count: counterReducer })
+    StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot([PostEffects])
   ],
   declarations: [
     AppComponent,
@@ -100,8 +107,10 @@ import { VoterDetailComponent } from './voter-detail/voter-detail.component';
     CounterComponent,
     PumpComponent,
     PrintDialogComponent,
-    VoterDetailComponent
+    VoterDetailComponent,
+    PostsComponent
   ],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
