@@ -5,19 +5,8 @@ export const postReducers = (
   state = initialPostState,
   action: PostActions
 ): IPostState => {
-  // console.log('userReducers: ' + action.type);
-  // console.log('compare: ' + EPostActions.GetPostsSuccess);
-  
-
-  // if (action.type == EPostActions.GetPostsSuccess) {
-  //   console.log('SUCCESS');
-  // }
-  
   switch (action.type) {
     case EPostActions.GetPostsSuccess: {
-      // console.log('GetPostsSuccess');
-      console.log('payload'+action.payload);
-      
       return {
         ...state,
         posts: action.payload
@@ -25,7 +14,6 @@ export const postReducers = (
     }
 
     case EPostActions.GetPostSuccess: {
-      // console.log('GetPostSuccess');
       return {
         ...state,
         selectedPost: action.payload
@@ -33,7 +21,6 @@ export const postReducers = (
     }
 
     default:
-      // console.log('ERROR');
       return state;
   }
 }

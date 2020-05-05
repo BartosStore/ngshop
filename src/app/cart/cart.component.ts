@@ -14,13 +14,11 @@ export class CartComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log('items: ' + this.cartService.getItems());
     this.products = this.cartService.getItems();
   }
 
   clearItems() {
     this.cartService.clearCart();
     this.products = [];
-    console.log('items: ' + this.products);
   }
 }
