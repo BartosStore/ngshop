@@ -10,7 +10,7 @@ export const selectPostList = createSelector(
   (state: IPostState) => state.posts
 )
 
-export const selectSelectedUser = createSelector(
+export const selectSelectedPost = createSelector(
   selectPosts,
   (state: IPostState) => state.selectedPost
 )
