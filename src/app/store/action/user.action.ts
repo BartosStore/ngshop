@@ -19,6 +19,7 @@ export class GetUsersSuccess implements Action {
 
 export class GetUser implements Action {
   public readonly type = EUserActions.GetUser;
+  constructor(public payload: number) { }
 }
 
 export class GetUserSuccess implements Action {
