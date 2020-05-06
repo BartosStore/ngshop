@@ -4,8 +4,11 @@ import { Observable } from 'rxjs';
 
 import { IAppState } from '../store/state/app.state';
 import { GetPosts } from '../store/action/post.action';
-import { selectPostList } from '../store/selector/post.selector';
+import { GetUsers } from '../store/action/user.action';
 import { IPost } from '../model/post';
+import { IUser } from '../model/user';
+import { selectPostList } from '../store/selector/post.selector';
+import { selectUserList } from '../store/selector/user.selector';
 
 @Component({
   selector: 'app-posts',
@@ -14,16 +17,23 @@ import { IPost } from '../model/post';
 })
 export class PostsComponent implements OnInit {
   posts$: Observable<IPost[]>;
-  length = 0;
+  postsLength = 0;
+  users$: Observable<IUser[]> = this._store.pipe(select(selectUserList));
+  usersLength = 0;
 
   constructor(private _store: Store<IAppState>) {
     this.posts$ = this._store.pipe(select(selectPostList));
   }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
     this._store.dispatch(new GetPosts());
     this.posts$.subscribe(posts => {
-      this.length = posts ? posts.length : 0;
+      this.postsLength = posts ? posts.length : 0;
+    });
+
+    this._store.dispatch(new GetUsers());
+    this.users$.subscribe(users => {
+      this.usersLength = users ? users.length : 0;
     });
   }
 }
