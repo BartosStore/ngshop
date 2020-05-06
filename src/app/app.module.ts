@@ -46,6 +46,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { PostEffects } from './store/effect/post.effect';
 import { PostService } from './service/post.service';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { UserEffects } from './store/effect/user.effect';
+import { UserService } from './service/user.service';
 
 @NgModule({
   imports: [
@@ -89,7 +91,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     ]),
     BrowserAnimationsModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([PostEffects])
+    EffectsModule.forRoot([PostEffects, UserEffects])
   ],
   declarations: [
     AppComponent,
@@ -113,7 +115,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     PostsComponent,
     PostDetailComponent
   ],
-  providers: [PostService],
+  providers: [PostService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
