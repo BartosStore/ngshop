@@ -45,6 +45,7 @@ import { appReducers } from './store/reducer/app.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { PostEffects } from './store/effect/post.effect';
 import { PostService } from './service/post.service';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 @NgModule({
   imports: [
@@ -82,7 +83,8 @@ import { PostService } from './service/post.service';
       { path: 'cart', component: CartComponent },
       { path: 'pump', component: PumpComponent },
       { path: 'pump/:voterId', component: VoterDetailComponent },
-      { path: 'pump2', component: PostsComponent },
+      { path: 'posts', component: PostsComponent },
+      { path: 'posts/:postId', component: PostDetailComponent },
       { path: '**', component: ProductListComponent }
     ]),
     BrowserAnimationsModule,
@@ -108,7 +110,8 @@ import { PostService } from './service/post.service';
     PumpComponent,
     PrintDialogComponent,
     VoterDetailComponent,
-    PostsComponent
+    PostsComponent,
+    PostDetailComponent
   ],
   providers: [PostService],
   bootstrap: [AppComponent]
