@@ -4,9 +4,12 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { IAppState } from '../store/state/app.state';
-import { selectSelectedUser } from '../store/selector/post.selector';
 import { GetPost } from '../store/action/post.action';
+import { GetUser } from '../store/action/user.action';
 import { IPost } from '../model/post';
+import { IUser } from '../model/user';
+import { selectSelectedPost } from '../store/selector/post.selector';
+import { selectSelectedUser } from '../store/selector/user.selector';
 
 @Component({
   selector: 'app-post-detail',
@@ -14,8 +17,11 @@ import { IPost } from '../model/post';
   styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent implements OnInit {
-  post$: Observable<IPost> = this._store.pipe(select(selectSelectedUser));
+  post$: Observable<IPost> = this._store.pipe(select(selectSelectedPost));
   post: IPost = this._initializePost();
+
+  user$: Observable<IUser> = this._store.pipe(select(selectSelectedUser));
+  user: IUser = this._initializeUser();
 
   constructor(
     private _store: Store<IAppState>,
@@ -28,9 +34,18 @@ export class PostDetailComponent implements OnInit {
     this.post$.subscribe(post => {
       this.post = post;
     });
+
+    this._store.dispatch(new GetUser(this.post.id));
+    this.user$.subscribe(user => {
+      this.user = user;
+    });
   }
 
   private _initializePost(): IPost {
     return { id: null, title: "", body: "", userId: null };
+  }
+
+  private _initializeUser(): IUser {
+    return { id: null, name: "", email: "" };
   }
 }
