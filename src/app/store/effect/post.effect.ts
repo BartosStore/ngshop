@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Store, select, Action } from '@ngrx/store';
+import { Router } from '@angular/router';
+import { Store, select } from '@ngrx/store';
 import { Effect, ofType, Actions } from '@ngrx/effects';
-import { of, Observable } from 'rxjs';
-import { map, withLatestFrom, switchMap, every, tap } from 'rxjs/operators';
+import { map, withLatestFrom, switchMap, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 import { PostService } from 'src/app/service/post.service';
 import { IAppState } from '../state/app.state';
@@ -14,7 +15,8 @@ export class PostEffects {
   constructor(
     private _store: Store<IAppState>,
     private _actions$: Actions,
-    private _postService: PostService
+    private _postService: PostService,
+    private _router: Router
   ) { }
 
   @Effect()
@@ -23,8 +25,14 @@ export class PostEffects {
     map(action => action.payload),
     withLatestFrom(this._store.pipe(select(selectPostList))),
     switchMap(([id, posts]) => {
-      const selectedPost = posts.filter(post => post.id === +id)[0];
-      return of(new GetPostSuccess(selectedPost));
+      if (posts !== null) {
+        const selectedPost = posts.filter(post => post.id == +id)[0];
+        return of(new GetPostSuccess(selectedPost));
+      } else {
+        // todo: show error to user
+        // todo: create reusable FailAction and do redirect inside
+        this._router.navigate(['']);
+      }      
     }),
   );
 
