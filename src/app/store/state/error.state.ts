@@ -7,5 +7,6 @@ export const initialErrorState: IErrorState = {
 };
 
 export enum AppErrors {
-  postsNotAvailable
+  postsNotAvailable,
+  usersNotAvailable
 }
