@@ -4,11 +4,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { IAppState } from '../store/state/app.state';
-import { GetPost } from '../store/action/post.action';
+import { GetPost } from '../store/posts/post.action';
 import { GetUser } from '../store/action/user.action';
 import { IPost } from '../model/post';
 import { IUser } from '../model/user';
-import { selectSelectedPost } from '../store/selector/post.selector';
+import { selectSelectedPost } from '../store/posts/post.selector';
 import { selectSelectedUser } from '../store/selector/user.selector';
 
 @Component({

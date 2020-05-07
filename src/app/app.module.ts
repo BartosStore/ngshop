@@ -43,7 +43,7 @@ import { VoterDetailComponent } from './voter-detail/voter-detail.component';
 import { PostsComponent } from './posts/posts.component';
 import { appReducers } from './store/reducer/app.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { PostEffects } from './store/effect/post.effect';
+import { PostEffects } from './store/posts/post.effect';
 import { PostService } from './service/post.service';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { UserEffects } from './store/effect/user.effect';

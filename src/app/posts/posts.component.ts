@@ -3,11 +3,11 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { IAppState } from '../store/state/app.state';
-import { GetPosts } from '../store/action/post.action';
+import { GetPosts } from '../store/posts/post.action';
 import { GetUsers } from '../store/action/user.action';
 import { IPost } from '../model/post';
 import { IUser } from '../model/user';
-import { selectPostList } from '../store/selector/post.selector';
+import { selectPostList } from '../store/posts/post.selector';
 import { selectUserList } from '../store/selector/user.selector';
 
 @Component({

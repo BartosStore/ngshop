@@ -1,5 +1,5 @@
-import { initialPostState, IPostState } from '../state/post.state';
-import { PostActions, EPostActions } from '../action/post.action';
+import { initialPostState, IPostState } from './post.state';
+import { PostActions, EPostActions } from './post.action';
 
 export const postReducers = (
   state = initialPostState,

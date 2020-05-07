@@ -6,8 +6,8 @@ import { of } from 'rxjs';
 
 import { PostService } from 'src/app/service/post.service';
 import { IAppState } from '../state/app.state';
-import { EPostActions, GetPost, GetPostSuccess, GetPosts, GetPostsSuccess } from '../action/post.action';
-import { selectPostList } from '../selector/post.selector';
+import { EPostActions, GetPost, GetPostSuccess, GetPosts, GetPostsSuccess } from './post.action';
+import { selectPostList } from './post.selector';
 import { SafeRedirect } from '../action/error.action';
 import { AppErrors } from '../state/error.state';
 
