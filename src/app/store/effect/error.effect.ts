@@ -18,11 +18,13 @@ export class ErrorEffects {
   safeRedirect$ = this._actions$.pipe(
     ofType<SafeRedirect>(EErrorActions.SafeRedirect),
     map(action => action.payload),
-    tap((input) => console.log(input)),
     switchMap((error: AppErrors) => {
       let message: string = "";
       if (error === AppErrors.postsNotAvailable) {
         message = "Posts were not available";
+        this._router.navigate(['']);
+      } else if (error === AppErrors.usersNotAvailable) {
+        message = "Users were not available";
         this._router.navigate(['']);
       }
       return of(new SafeRedirectSuccess(message));
