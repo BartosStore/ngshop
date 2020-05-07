@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 
 import { IAppState } from '../store/state/app.state';
 import { GetPosts } from '../store/posts/post.action';
-import { GetUsers } from '../store/action/user.action';
+import { GetUsers } from '../store/users/user.action';
 import { IPost } from '../model/post';
 import { IUser } from '../model/user';
 import { selectPostList } from '../store/posts/post.selector';
-import { selectUserList } from '../store/selector/user.selector';
+import { selectUserList } from '../store/users/user.selector';
 
 @Component({
   selector: 'app-posts',

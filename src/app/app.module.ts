@@ -46,7 +46,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { PostEffects } from './store/posts/post.effect';
 import { PostService } from './service/post.service';
 import { PostDetailComponent } from './post-detail/post-detail.component';
-import { UserEffects } from './store/effect/user.effect';
+import { UserEffects } from './store/users/user.effect';
 import { UserService } from './service/user.service';
 import { ErrorEffects } from './store/effect/error.effect';
 
