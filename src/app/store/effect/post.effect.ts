@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { Effect, ofType, Actions } from '@ngrx/effects';
 import { map, withLatestFrom, switchMap, tap } from 'rxjs/operators';
@@ -9,6 +8,8 @@ import { PostService } from 'src/app/service/post.service';
 import { IAppState } from '../state/app.state';
 import { EPostActions, GetPost, GetPostSuccess, GetPosts, GetPostsSuccess } from '../action/post.action';
 import { selectPostList } from '../selector/post.selector';
+import { SafeRedirect } from '../action/error.action';
+import { AppErrors } from '../state/error.state';
 
 @Injectable()
 export class PostEffects {
@@ -16,7 +17,6 @@ export class PostEffects {
     private _store: Store<IAppState>,
     private _actions$: Actions,
     private _postService: PostService,
-    private _router: Router
   ) { }
 
   @Effect()
@@ -29,10 +29,8 @@ export class PostEffects {
         const selectedPost = posts.filter(post => post.id == +id)[0];
         return of(new GetPostSuccess(selectedPost));
       } else {
-        // todo: show error to user
-        // todo: create reusable FailAction and do redirect inside
-        this._router.navigate(['']);
-      }      
+        return of(new SafeRedirect(AppErrors.postsNotAvailable));
+      }
     }),
   );
 
