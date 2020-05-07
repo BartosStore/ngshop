@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { Router } from '@angular/router';
 import { Actions, ofType, Effect } from '@ngrx/effects';
 import { switchMap, map, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -9,6 +8,8 @@ import { UserService } from 'src/app/service/user.service';
 import { IAppState } from '../state/app.state';
 import { EUserActions, GetUsers, GetUsersSuccess, GetUser, GetUserSuccess } from '../action/user.action';
 import { selectUserList } from '../selector/user.selector';
+import { SafeRedirect } from '../action/error.action';
+import { AppErrors } from '../state/error.state';
 
 @Injectable()
 export class UserEffects {
@@ -16,7 +17,6 @@ export class UserEffects {
     private _store: Store<IAppState>,
     private _actions$: Actions,
     private _userService: UserService,
-    private _router: Router
   ) { }
 
   @Effect()
@@ -29,9 +29,7 @@ export class UserEffects {
         const user = users.find(user => user.id === id);
         return of(new GetUserSuccess(user));
       } else {
-        // todo: show error to user
-        // todo: create reusable FailAction and do redirect inside
-        this._router.navigate(['']);
+        return of(new SafeRedirect(AppErrors.usersNotAvailable));
       }
     })
   );
