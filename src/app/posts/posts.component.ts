@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { IAppState } from '../store/state/app.state';
+import { IAppState } from '../store/app.state';
 import { GetPosts } from '../store/posts/post.action';
 import { GetUsers } from '../store/users/user.action';
 import { IPost } from '../model/post';

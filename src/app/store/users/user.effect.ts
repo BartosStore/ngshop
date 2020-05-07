@@ -4,8 +4,8 @@ import { Actions, ofType, Effect } from '@ngrx/effects';
 import { switchMap, map, withLatestFrom } from 'rxjs/operators';
 import { of } from 'rxjs';
 
+import { IAppState } from '../app.state';
 import { UserService } from 'src/app/service/user.service';
-import { IAppState } from '../state/app.state';
 import { EUserActions, GetUsers, GetUsersSuccess, GetUser, GetUserSuccess } from './user.action';
 import { selectUserList } from './user.selector';
 import { SafeRedirect } from '../errors/error.action';

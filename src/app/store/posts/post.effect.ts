@@ -4,8 +4,8 @@ import { Effect, ofType, Actions } from '@ngrx/effects';
 import { map, withLatestFrom, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
+import { IAppState } from '../app.state';
 import { PostService } from 'src/app/service/post.service';
-import { IAppState } from '../state/app.state';
 import { EPostActions, GetPost, GetPostSuccess, GetPosts, GetPostsSuccess } from './post.action';
 import { selectPostList } from './post.selector';
 import { SafeRedirect } from '../errors/error.action';

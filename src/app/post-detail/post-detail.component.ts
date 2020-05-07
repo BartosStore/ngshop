@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { IAppState } from '../store/state/app.state';
+import { IAppState } from '../store/app.state';
 import { GetPost } from '../store/posts/post.action';
 import { GetUser } from '../store/users/user.action';
 import { IPost } from '../model/post';

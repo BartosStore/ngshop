@@ -23,7 +23,7 @@ import { PumpComponent } from './pump/pump.component';
 import { EmailNotificationsPipe } from './email-notifications.pipe';
 
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from "./store/reducer/counter.reducer";
+import { counterReducer } from "./counter/counter.reducer";
 import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
@@ -41,7 +41,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { PrintDialogComponent } from './print-dialog/print-dialog.component';
 import { VoterDetailComponent } from './voter-detail/voter-detail.component';
 import { PostsComponent } from './posts/posts.component';
-import { appReducers } from './store/reducer/app.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { PostEffects } from './store/posts/post.effect';
 import { PostService } from './service/post.service';
@@ -49,6 +48,7 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
 import { UserEffects } from './store/users/user.effect';
 import { UserService } from './service/user.service';
 import { ErrorEffects } from './store/errors/error.effect';
+import { appReducers } from './store/app.reducer';
 
 @NgModule({
   imports: [

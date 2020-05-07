@@ -1,5 +1,5 @@
-import { IUserState, initialUserState } from '../users/user.state';
-import { IPostState, initialPostState } from '../posts/post.state';
+import { IUserState, initialUserState } from './users/user.state';
+import { IPostState, initialPostState } from './posts/post.state';
 
 export interface IAppState {
   users: IUserState,
