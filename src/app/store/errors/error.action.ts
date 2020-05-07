@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { AppErrors } from '../state/error.state';
+import { AppErrors } from './error.state';
 
 export enum EErrorActions {
   SafeRedirect = '[App] Safe Redirect',

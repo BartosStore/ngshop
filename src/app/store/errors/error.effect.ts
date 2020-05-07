@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 import { switchMap, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
-import { SafeRedirect, EErrorActions, SafeRedirectSuccess } from '../action/error.action';
-import { AppErrors } from '../state/error.state';
+import { SafeRedirect, EErrorActions, SafeRedirectSuccess } from './error.action';
+import { AppErrors } from './error.state';
 
 @Injectable()
 export class ErrorEffects {

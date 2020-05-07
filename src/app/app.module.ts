@@ -48,7 +48,7 @@ import { PostService } from './service/post.service';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { UserEffects } from './store/users/user.effect';
 import { UserService } from './service/user.service';
-import { ErrorEffects } from './store/effect/error.effect';
+import { ErrorEffects } from './store/errors/error.effect';
 
 @NgModule({
   imports: [

@@ -1,5 +1,5 @@
-import { initialErrorState, IErrorState } from '../state/error.state';
-import { ErrorActions, EErrorActions } from '../action/error.action';
+import { initialErrorState, IErrorState } from './error.state';
+import { ErrorActions, EErrorActions } from './error.action';
 
 export const errorReducer = (
   state = initialErrorState,

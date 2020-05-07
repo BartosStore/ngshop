@@ -8,8 +8,8 @@ import { UserService } from 'src/app/service/user.service';
 import { IAppState } from '../state/app.state';
 import { EUserActions, GetUsers, GetUsersSuccess, GetUser, GetUserSuccess } from './user.action';
 import { selectUserList } from './user.selector';
-import { SafeRedirect } from '../action/error.action';
-import { AppErrors } from '../state/error.state';
+import { SafeRedirect } from '../errors/error.action';
+import { AppErrors } from '../errors/error.state';
 
 @Injectable()
 export class UserEffects {
