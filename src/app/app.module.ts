@@ -48,6 +48,7 @@ import { PostService } from './service/post.service';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { UserEffects } from './store/effect/user.effect';
 import { UserService } from './service/user.service';
+import { ErrorEffects } from './store/effect/error.effect';
 
 @NgModule({
   imports: [
@@ -91,7 +92,7 @@ import { UserService } from './service/user.service';
     ]),
     BrowserAnimationsModule,
     StoreModule.forRoot(appReducers),
-    EffectsModule.forRoot([PostEffects, UserEffects])
+    EffectsModule.forRoot([PostEffects, UserEffects, ErrorEffects])
   ],
   declarations: [
     AppComponent,
