@@ -49,7 +49,7 @@ export class PumpComponent implements OnInit {
   printSelected() {
     this.sortedDataSource.filteredData.forEach(row => {
       if (this.selection.isSelected(row)) {
-        console.log(row.name + ' from ' + row.city)
+        // console.log(row.name + ' from ' + row.city)
       }
     });
 

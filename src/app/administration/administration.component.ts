@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AdministrationComponent implements OnInit {
   constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe(params => console.log(params));
+    // this.route.params.subscribe(params => console.log(params));
    }
 
   ngOnInit(): void {
